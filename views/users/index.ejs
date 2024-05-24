@@ -1,0 +1,49 @@
+<%- include('../partials/header'); %>
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header">
+            <h2>Dados de Usuário</h2>
+        </div>
+        <div class="card-body ml-20">
+            <div class="col-md-3 mb-2 ml-50">
+                <img class="cnt img-fluid rounded-start" src="/img/<%= user.img %>" alt="">
+            </div>
+            <h4>Nome</h4>
+            <p><%= user.nome %> <%= user.sobrenome %></p>
+            <div class="row">
+                <div class="col col-5">
+                    <h4>Documento de Identidade</h4>
+                    <p><%= user.identidade %></p>
+                </div>
+                <div class="col col-3">
+                    <h4>Orgão Emissor</h4>
+                    <p><%= user.orgEmissor %></p>
+                </div>
+                <div class="col col-2">
+                    <h4>UF</h4>
+                    <p><%= user.uf %></p>
+                </div>
+            </div>             
+            <h4>CPF</h4>
+            <p><%= user.cpf %></p>
+            <h4>Data de Nascimento</h4>
+            <p><%= new Date(user.dtNascimento).toLocaleDateString() %></p>
+            <div class="row">
+                <div class="col">
+                    <h4>Filiação Pai</h4>
+                    <p><%= user.nomePai %></p>
+                </div>
+                <div class="col">
+                    <h4>Filiação Mãe</h4>
+                    <p><%= user.nomeMae %></p>
+                </div>
+            </div>
+            
+            <h4>Permissão</h4>
+            <p><%= user.permissao %></p>
+            <h4>ACC</h4>
+            <p><%= user.acc %></p>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer'); %>

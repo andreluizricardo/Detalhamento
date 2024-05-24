@@ -1,0 +1,63 @@
+<%- include('../partials/header'); %>
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header">
+            <h2>Editar Usuário</h2>
+        </div>
+        <div class="card-body">
+            <form action="/user/update" method="POST">
+                <input required type="hidden" name="id" value="<%= user.id %>">
+                <div class="row">
+                    <div class="col">
+                        <label for="nome">Nome</label>
+                        <input required type="text" name="nome" class="form-control mb-3" value="<%= user.nome %>">
+                    </div>
+                    <div class="col">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input required type="text" name="sobrenome" class="form-control mb-3" value="<%= user.sobrenome %>">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="identidade">Documento de Identidade</label>
+                        <input required type="text" name="identidade" class="form-control mb-3" value="<%= user.identidade %>">
+                    </div>
+                    <div class="col">
+                        <label for="emissor">Orgão Emissor</label>
+                        <input required type="text" name="emissor" class="form-control mb-3" value="<%= user.orgEmissor %>">
+                    </div>
+                    <div class="col col-1">
+                        <label for="uf">UF</label>
+                        <input required type="text" name="uf" class="form-control mb-3" maxlength="2" value="<%= user.uf %>">
+                    </div>
+                    <div class="col">
+                        <label for="cpf">CPF</label>
+                        <input required type="text" name="cpf" class="form-control mb-3" value="<%= user.cpf %>" maxlength="14" OnKeyPress="formatar('###.###.###-###',this)">       
+                    </div>
+                    <div class="col">
+                        <label for="dataNascimento">Data de Nascimento</label>
+                        <input required type="date" name="dataNascimento" min="1900-01-01" max="2030-01-01" class="form-control mb-3" value="<%= new Date(user.dtNascimento).toLocaleDateString("sv-SE") %>">
+                    </div>
+                </div>             
+                
+                <label for="nomePai">Filiação Pai</label>
+                <input required type="text" name="nomePai" class="form-control mb-3" value="<%= user.nomePai %>">
+                <label for="nomeMae">Filiação Mãe</label>
+                <input required type="text" name="nomeMae" class="form-control mb-3" value="<%= user.nomeMae %>">
+                <label for="permissao">Permissão</label>
+                <input required type="text" name="permissao" class="form-control mb-3" value="<%= user.permissao %>">
+                <label for="ACC">ACC</label>
+                <input required type="text" name="acc" class="form-control mb-3" value="<%= user.acc %>">
+                <!-- <label for="img">Selecione uma imagem:</label>
+                <input required type="file" id="img" name="img" accept="image/*" value="<%= user.img %>"> -->
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-outline-warning mt-5">Salvar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer'); %>

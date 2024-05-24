@@ -1,0 +1,73 @@
+<%- include('../partials/header'); %>
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('#cpf').mask('000.000.000-00');
+      });
+</script>
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header">
+            <h2>Cadastro de Usuário</h2>
+        </div>
+        <div class="card-body">
+            <form action="/user/save" method="POST" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col">
+                        <label for="nome">Nome</label>
+                        <input required type="text" name="nome" class="form-control mb-3">
+                    </div>
+                    <div class="col">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input required type="text" name="sobrenome" class="form-control mb-3">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="identidade">Documento de Identidade</label>
+                        <input required type="text" name="identidade" class="form-control mb-3">
+                    </div>
+                    <div class="col">
+                        <label for="emissor">Orgão Emissor</label>
+                        <input required type="text" name="emissor" class="form-control mb-3">
+                    </div>
+                    <div class="col col-1">
+                        <label for="uf">UF</label>
+                        <input required type="text" name="uf" maxlength="2" class="form-control mb-3">
+                    </div>
+                    <div class="col">
+                        <label for="cpf">CPF</label>
+                        <input required type="text" id="cpf" name="cpf" maxlength="14" class="form-control mb-3 cpf-mask" OnKeyPress="formatar('###.###.###-###',this)">        
+                    </div>
+                    <div class="col">
+                        <label for="dataNascimento">Data de Nascimento</label>
+                        <input required type="date" name="dataNascimento" class="form-control mb-3">
+                    </div>
+                </div>             
+                
+                <label for="nomePai">Filiação Pai</label>
+                <input required type="text" name="nomePai" class="form-control mb-3">
+                <label for="nomeMae">Filiação Mãe</label>
+                <input required type="text" name="nomeMae" class="form-control mb-3">
+                <label for="permissao">Permissão</label>
+                <input required type="text" name="permissao" class="form-control mb-3">
+                <label for="ACC">ACC</label>
+                <input required type="text" name="acc" class="form-control mb-3">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="imagem">Selecione uma imagem:</label>
+                        <input required type="file" name="imagem" accept="image/*">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-outline-success mt-5">Cadastrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer'); %>
+
+

@@ -1,0 +1,25 @@
+<%- include('../../partials/header'); %>
+<%- include('../../partials/navbar'); %>
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header">
+            <h2>Alterar Administrador</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-4 ml-50">
+                    <form action="/useradm/update" method="POST">
+                        <input type="hidden" name="id" class="form-control mb-3" value="<%= user.id %>">
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" class="form-control mb-3" value="<%= user.nome %>">
+                        <label for="password">Senha</label>
+                        <input type="password" name="password" class="form-control mb-3">
+                        <button class="btn btn-outline-success">Salvar</button>
+                        <a class="btn btn-outline-danger" href="/admin">Voltar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../../partials/footer'); %>
