@@ -8,3 +8,14 @@ function formatar(mascara, documento) {
       texto = mascara.substring(i);
     }
   }
+
+
+function confimDelete(event, form) {
+    var decision = confirm("Deseja deletar este usuário?");  
+
+    if(!decision) {
+        event.preventDefault();
+    } else {
+        form.submit();
+    }
+}
